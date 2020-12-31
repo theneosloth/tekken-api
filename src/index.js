@@ -1,37 +1,18 @@
 const express = require('express');
 const { getCharData, getMoveData } = require('./get_char_data');
+const { DEFAULT_PORT, VALID_CHARACTERS } = require('./consts.js');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || DEFAULT_PORT;
 
 app.use(express.json());
-
-const names = [
-  'akuma',       'alisa',     'anna',
-  'armor_king',  'asuka',     'bob',
-  'bryan',       'claudio',   'devil_jin',
-  'dragunov',    'eddy',      'eliza',
-  'fahkumram',   'feng',      'ganryu',
-  'geese',       'gigas',     'heihachi',
-  'hwoarang',    'jack7',     'jin',
-  'josie',       'julia',     'katarina',
-  'kazumi',      'kazuya',    'king',
-  'kuma',        'kunimitsu', 'lars',
-  'law',         'lee',       'lei',
-  'leo',         'leroy',     'lili',
-  'lucky_chloe', 'marduk',    'master_raven',
-  'miguel',      'negan',     'nina',
-  'noctis',      'panda',     'paul',
-  'shaheen',     'steve',     'xiaoyu',
-  'yoshimitsu',  'zafina'
-]
 
 app.get('/', (_req, res) => {
   res.send(names);
 });
 
 app.get('/api/character/:name',  (request, response) => {
-  if (!(names.includes(request.params.name))){
+  if (!(VALID_CHARACTERS.includes(request.params.name))){
     response.sendStatus(404);
     return;
   }
