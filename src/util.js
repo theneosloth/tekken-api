@@ -4,11 +4,14 @@ const replaceNickname = (command) => {
     'EWGF': 'fnddf+2'
   }
 
-  Object.entries(shortcuts).forEach((original, replacement) => {
+  Object.entries(shortcuts).forEach(shortcut => {
+    original = shortcut[0];
+    replacement = shortcut[1];
     if (command.includes(original)){
-      command.replace(original, replacement);
+      command = command.replace(original, replacement);
     }
   });
+  return command;
 }
 
 /**
