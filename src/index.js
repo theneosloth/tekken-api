@@ -2,7 +2,7 @@ const express = require('express');
 const { getCharData, getMoveData } = require('./get_char_data');
 
 const app = express();
-const port = process.env.TEKKEN_API_PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
