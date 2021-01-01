@@ -1,4 +1,4 @@
-[![Heroku](https://heroku-badge.herokuapp.com/?app=tekken-api)]
+![Heroku](https://heroku-badge.herokuapp.com/?app=tekken-api)
 # Tekken Frame Data API
 
 This is an express app serving and filtering json data containing moves for Tekken 7 characters.
