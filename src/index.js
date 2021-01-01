@@ -11,7 +11,7 @@ app.get('/', (_req, res) => {
   res.send(VALID_CHARACTERS);
 });
 
-app.get('/api/character/:name',  (request, response) => {
+app.get('/api/character/:name/moves',  (request, response) => {
   if (!(VALID_CHARACTERS.includes(request.params.name))){
     response.sendStatus(404);
     return;
@@ -46,7 +46,7 @@ app.get('/api/character/:name/move/',  (request, response) => {
   response.send(result);
 })
 
-app.get('/api/character/:name/moves',  (request, response) => {
+app.get('/api/character/:name/',  (request, response) => {
   if (!(VALID_CHARACTERS.includes(request.params.name))){
     response.sendStatus(404);
     return;
