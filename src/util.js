@@ -20,7 +20,7 @@ const replaceNickname = (command) => {
  * @returns {String} normalized command
  */
 function normalizeCommand(command) {
-  return command.replace(/\/|\\|\s|,/gi, '')
+  return replaceNickname(command).replace(/\/|\\|,(\s)*|\+/gi, '')
 }
 
 const getTotalDamage = (move) => {

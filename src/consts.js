@@ -1,4 +1,4 @@
-export const VALID_CHARACTERS = [
+const VALID_CHARACTERS = [
   'akuma',       'alisa',     'anna',
   'armor_king',  'asuka',     'bob',
   'bryan',       'claudio',   'devil_jin',
@@ -18,4 +18,6 @@ export const VALID_CHARACTERS = [
   'yoshimitsu',  'zafina'
 ];
 
-export const DEFAULT_PORT = 3000;
+const DEFAULT_PORT = 3000;
+
+module.exports = {VALID_CHARACTERS, DEFAULT_PORT}
